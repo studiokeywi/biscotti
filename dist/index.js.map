@@ -1,1 +1,7 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../lib/index.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,IAAI,IAAI,UAAU,EAAE,MAAM,aAAa,CAAC;AACjD,OAAO,EAAE,IAAI,IAAI,UAAU,EAAE,MAAM,aAAa,CAAC;AAEjD,OAAO,EAAE,QAAQ,EAAE,MAAM,WAAW,CAAC;AAIrC,MAAM,CAAC,OAAO,UAAU,IAAI,CAAC,GAAqB,EAAE,GAAsB;IACxE,OAAO,QAAQ,EAAE,CAAC,CAAC,CAAC,UAAU,EAAE,CAAC,CAAC,CAAC,UAAU,CAAC,GAAG,EAAE,GAAG,CAAC,CAAC;AAC1D,CAAC;AAED,OAAO,EAAE,UAAU,EAAE,UAAU,EAAE,CAAC"}
+{
+  "version": 3,
+  "sources": ["../lib/index.ts"],
+  "sourcesContent": ["import { bake as bakeClient } from './client.js';\r\nimport { bake as bakeServer } from './server.js';\r\nimport type {\r\n  BakedClient,\r\n  BakedServer,\r\n  Biscotti,\r\n  BiscottiRequest,\r\n  BiscottiResponse,\r\n  CookieAttrs,\r\n  CookieObject,\r\n  ServerCookieAttrs,\r\n} from './types.js';\r\nimport { isClient } from './util.js';\r\n\r\n/** Create a new Client version of Biscotti */\r\nexport default function bake(): BakedClient;\r\n/** Create a new Server version of Biscotti */\r\nexport default function bake(req: BiscottiRequest, res: BiscottiResponse): BakedServer;\r\n/** Create a new Biscotti instance */\r\nexport default function bake(req?: BiscottiRequest, res?: BiscottiResponse): Biscotti {\r\n  return isClient() ? bakeClient() : bakeServer(req, res);\r\n}\r\n\r\nexport { bakeClient, bakeServer };\r\n\r\nexport type {\r\n  BakedClient,\r\n  BakedServer,\r\n  Biscotti,\r\n  BiscottiRequest,\r\n  BiscottiResponse,\r\n  CookieAttrs,\r\n  CookieObject,\r\n  ServerCookieAttrs,\r\n};\r\n"],
+  "mappings": "AAAA,SAAS,QAAQ,kBAAkB;AACnC,SAAS,QAAQ,kBAAkB;AAWnC,SAAS,gBAAgB;AAOV,SAAR,KAAsB,KAAuB,KAAkC;AACpF,SAAO,SAAS,IAAI,WAAW,IAAI,WAAW,KAAK,GAAG;AACxD;",
+  "names": []
+}
